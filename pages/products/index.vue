@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { useProductStore } from '~/stores/products';
+
+const productStore = useProductStore();
+
+onMounted(() => {
+  productStore.fetchProducts();
+});
+</script>
+
 <template>
   <div>
     <h2>Products</h2>
@@ -31,16 +41,6 @@
     </BaseCard>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useProductStore } from '~/stores/products';
-
-const productStore = useProductStore();
-
-onMounted(() => {
-  productStore.fetchProducts();
-});
-</script>
 
 <style scoped>
 .product-table {

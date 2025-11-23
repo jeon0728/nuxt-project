@@ -3,12 +3,16 @@
     <label v-if="label">{{ label }}</label>
     <input
       :type="type"
-      v-bind="$attrs"
+      v-bind="$attrs" 
       :value="modelValue"
       @input="updateValue"
       class="base-input"
     />
   </div>
+  <!-- 
+    v-bind: 단순속성값 (placeholder, maxlength)
+    :value: 실제 값을 받기 위함
+  -->
 </template>
 
 <script setup lang="ts">

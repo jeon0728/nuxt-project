@@ -2,10 +2,10 @@
 import { defineEventHandler, getCookie, setCookie } from 'h3'
 
 export default defineEventHandler(async (event) => {
-    console.log('🔵 서버에서 읽은 refresh token:')
+  console.log('🔵 서버에서 읽은 refresh token:')
   const config = useRuntimeConfig()
   const backendUrl = `${config.public.apiBase}/api/auth/refresh`
-console.log('🔵 서버에서 읽은 refresh token:')
+  console.log('🔵 서버에서 읽은 refresh token:')
 
 
   // 서버는 클라이언트의 쿠키(브라우저에서 보낸)를 포함하여 백엔드로 보냄

@@ -4,13 +4,13 @@ import { useAuthStore } from '~/stores/auth'
 
 const email = ref<string>('')
 const password = ref<string>('')
-const auth = useAuthStore()
+const authStroe = useAuthStore()
 const router = useRouter()
 const error = ref<string>('')
 
 const onLogin = async () => {
   error.value = ''
-  const ok = await auth.login({ email: email.value, password: password.value })
+  const ok = await authStroe.login({ email: email.value, password: password.value })
   if (ok) {
     navigateTo('/products');
   } else {
@@ -20,9 +20,9 @@ const onLogin = async () => {
 
 const onRefreshTest = async () => {
   error.value = ''
-  const useYn = await auth.refreshToken()
+  const useYn = await authStroe.refreshToken()
   console.log('access token 존재여부:', useYn)
-  console.log('새 토큰:', auth.accessToken)
+  console.log('새 토큰:', authStroe.accessToken)
   
 }
 
