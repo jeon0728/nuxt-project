@@ -39,3 +39,4 @@ const updateValue = (e: Event) => {
   border-radius: 6px;
 }
 </style>
+
